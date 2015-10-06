@@ -13,10 +13,10 @@ var header = require('gulp-header');
 var uglify = require('gulp-uglify');
 var babel = require('gulp-babel'); // Uglify not working without gulp-babel?
 var rename = require('gulp-rename');
+var minifyHtml = require('gulp-minify-html');
 var pkg = require('./package.json');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
-var templateCache = require('gulp-angular-templatecache');
 
 // Develop build
 // ============================================================================
@@ -56,21 +56,20 @@ gulp.task('connect', function() {
 // Dist build
 // ============================================================================
 gulp.task('dist:clean', function (cb) {
-    return del(['dist', 'temp'], cb);
-});
-
-gulp.task('dist:copyJs', ['dist:clean'], function () {
-    return gulp.src('src/angular-elasticslider.js')
-        .pipe(gulp.dest('temp'))
+    return del(['dist'], cb);
 });
 
 gulp.task('dist:copyView', ['dist:clean'], function () {
-    // Angular $templateCache
     return gulp.src([
             'src/elastic-slider/*.html',
             'src/elastic-slider-pagi-item/*.html',
         ])
         .pipe(concat('polymer-elastic-slider.html'))
+        .pipe(minifyHtml({
+            quotes: true,
+            empty: true,
+            spare: true
+        }))
         .pipe(gulp.dest('dist'));
 });
 
@@ -94,18 +93,9 @@ gulp.task('dist:build', ['dist:clean'], function () {
         .pipe(uglify())
         .pipe(header(banner, { pkg : pkg } ))
         .pipe(gulp.dest('dist'))
-
-    // return gulp.src('src/*.js')
-    //     .pipe(concat('angular-elasticslider.min.js'))
-    //     .pipe(babel())
-    //     .pipe(uglify())
-    //     .pipe(header(banner, { pkg : pkg } ))
-    //     .pipe(gulp.dest('dist'))
 });
 
 // Tasks
 // ============================================================================
 gulp.task('serve', ['sass', 'js', 'connect', 'watch']);
-gulp.task('default', ['dist:build', 'dist:copyView', 'dist:sass'], function(cb) {
-    return del(['temp'], cb);
-});
+gulp.task('default', ['dist:build', 'dist:copyView', 'dist:sass']);
