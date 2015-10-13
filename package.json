@@ -1,0 +1,33 @@
+{
+  "name": "Polymer-ElasticSlider",
+  "version": "0.4.1",
+  "description": "An agnostic and responsive slider.",
+  "homepage": "https://github.com/JamyGolden/Polymer-ElasticSlider",
+  "main": "dist/polymer-elastic-slider.html",
+  "files": [
+    "dist/angular-elasticslider.min.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-header": "^1.7.1",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.1"
+  },
+  "scripts": {
+    "start": "gulp serve"
+  },
+  "author": "Jamy Golden",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamyGolden/Angular-ElasticSlider.git"
+  }
+}

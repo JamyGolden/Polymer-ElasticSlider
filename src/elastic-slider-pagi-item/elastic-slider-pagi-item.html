@@ -1,0 +1,14 @@
+<link rel="import"
+ href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="elastic-slider-pagi-item">
+
+    <template>
+        <div class$="{{getClassList(activeSlide)}}"
+         on-click="setActive">
+            <span>{{model.index}}</span>
+        </div>
+    </template>
+
+    <script src="elastic-slider-pagi-item.js"></script>
+</dom-module>

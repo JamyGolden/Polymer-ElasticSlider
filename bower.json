@@ -1,0 +1,20 @@
+{
+  "name": "polymer-elasticslider",
+  "version": "0.4.1",
+  "description": "An agnostic and responsive slider.",
+  "authors": [
+    "Jamy Golden <jamygolden@gmail.com>"
+  ],
+  "keywords": [
+    "polymer",
+    "polymer carousel",
+    "polymer slider",
+    "elasticslider",
+    "slider",
+    "carousel"
+  ],
+  "dependencies": {
+    "elasticslider-core": "~0.4.0",
+    "polymer": "Polymer/polymer#~1.1.4"
+  }
+}
