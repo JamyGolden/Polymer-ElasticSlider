@@ -14,7 +14,7 @@
     "carousel"
   ],
   "dependencies": {
-    "elasticslider": "~0.4.0",
+    "elasticslider-core": "~0.4.0",
     "polymer": "Polymer/polymer#~1.1.4"
   }
 }
