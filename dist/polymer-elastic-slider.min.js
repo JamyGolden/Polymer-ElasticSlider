@@ -1,6 +1,6 @@
 /**
  * Polymer-ElasticSlider - An agnostic and responsive slider.
- * @version v0.4.0
+ * @version v0.4.1
  * @link https://github.com/JamyGolden/Polymer-ElasticSlider
  * @license MIT
  */
