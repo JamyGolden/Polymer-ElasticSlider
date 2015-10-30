@@ -45,14 +45,14 @@
             // Determine next slide index
             if (typeof val === 'number') {
                 index = val - 1;
-            } else if (val === 'Prev'){
+            } else if (val === 'prev'){
                 index = this.slider.getProp('activeSlideIndex') - 1;
 
-                this.slider.setProp('animationDirection', 'Prev');
+                this.slider.setProp('animationDirection', 'prev');
             } else {
                 index = this.slider.getProp('activeSlideIndex') + 1;
 
-                this.slider.setProp('animationDirection', 'Next');
+                this.slider.setProp('animationDirection', 'next');
             }
 
             index = this._getTargetIndex(index);
@@ -94,7 +94,7 @@
             this.autoPlayInterval = null;
             this.pagiArr = [];
             this.totalSlides = this.querySelector('.ElasticSlider-container').children.length;
-            this.arrowArr = ['Prev', 'Next'];
+            this.arrowArr = ['prev', 'next'];
             this.disablePagi = false;
 
             // Init slider
@@ -116,7 +116,7 @@
                 );
 
                 // Set direction
-                self.slider.setProp('animationDirection', 'Next');
+                self.slider.setProp('animationDirection', 'next');
 
                 self.toSlide(index);
 
