@@ -127,6 +127,10 @@
             window.clearInterval(this.autoPlayInterval);
         },
 
+        dynamicClass: function(staticClassStr, val) {
+            return staticClassStr + val;
+        },
+
         _pagiFactory: function(num) {
             var arr = [];
 

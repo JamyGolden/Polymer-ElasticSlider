@@ -17,7 +17,7 @@
                 <template is="dom-repeat"
                  items="{{arrowArr}}">
                     <div on-click="clickToSlide"
-                     class="ElasticSlider-arrowItem">{{item}}</div>
+                     class$="{{dynamicClass('ElasticSlider-arrowItem ElasticSlider-arrowItem--', item)}}">{{item}}</div>
                 </template>
 
             </div>
