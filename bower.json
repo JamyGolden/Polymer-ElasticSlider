@@ -1,6 +1,6 @@
 {
   "name": "polymer-elasticslider",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "An agnostic and responsive slider.",
   "authors": [
     "Jamy Golden <jamygolden@gmail.com>"
@@ -15,6 +15,6 @@
   ],
   "dependencies": {
     "elasticslider-core": "~0.4.0",
-    "polymer": "Polymer/polymer#~1.1.4"
+    "polymer": "~1.2.1"
   }
 }
