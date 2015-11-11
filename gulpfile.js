@@ -89,7 +89,9 @@ gulp.task('dist:build', ['dist:clean'], function () {
             'src/elastic-slider-pagi-item/*.js',
         ])
         .pipe(concat('polymer-elastic-slider.min.js'))
-        .pipe(babel())
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(uglify())
         .pipe(header(banner, { pkg : pkg } ))
         .pipe(gulp.dest('dist'))
