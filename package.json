@@ -1,6 +1,6 @@
 {
   "name": "Polymer-ElasticSlider",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "description": "An agnostic and responsive slider.",
   "homepage": "https://github.com/JamyGolden/Polymer-ElasticSlider",
   "main": "dist/polymer-elastic-slider.html",
