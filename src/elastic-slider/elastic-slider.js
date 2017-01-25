@@ -99,7 +99,7 @@
 
             // Init slider
             this.pagiArr = this._pagiFactory(this.totalSlides);
-            this.slider = new ElasticSlider(this, sliderOptions);
+            this.slider = new ElasticSliderCore(this, sliderOptions);
 
             if (this.autoPlayDuration > 0) {
                 this.startAutoPlay();

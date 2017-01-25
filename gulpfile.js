@@ -7,7 +7,7 @@ var banner = ['/**',
     ' */',
     ''].join('\n');
 var concat = require('gulp-concat');
-var connect = require('gulp-connect');
+var webserver = require('gulp-webserver');
 var del = require('del');
 var header = require('gulp-header');
 var uglify = require('gulp-uglify');
@@ -28,16 +28,14 @@ gulp.task('sass', function() {
         }))
         .pipe(sourcemaps.write())
         .pipe(rename('elasticslider.css'))
-        .pipe(gulp.dest('src/css'))
-        .pipe(connect.reload());
+        .pipe(gulp.dest('src/css'));
 });
 
 gulp.task('js', function () {
     gulp.src([
         'src/elastic-slider/elastic-slider.js',
         'src/elastic-slider-pagi-item/elastic-slider-pagi-item.js',
-    ])
-        .pipe(connect.reload());
+    ]);
 });
 
 gulp.task('watch', function () {
@@ -45,12 +43,14 @@ gulp.task('watch', function () {
     gulp.watch('src/**/*.js', ['js']);
 });
 
-gulp.task('connect', function() {
-    connect.server({
-        port: 5000,
-        root: '.',
-        livereload: true
-    });
+gulp.task('webserver', () => {
+  return gulp.src('./src')
+      .pipe(webserver({
+          livereload: false,
+          fallback: 'demo.html',
+          port: 5000,
+          open: true,
+      }));
 });
 
 // Dist build
@@ -99,5 +99,5 @@ gulp.task('dist:build', ['dist:clean'], function () {
 
 // Tasks
 // ============================================================================
-gulp.task('serve', ['sass', 'js', 'connect', 'watch']);
+gulp.task('serve', ['sass', 'js', 'webserver', 'watch']);
 gulp.task('default', ['dist:build', 'dist:copyView', 'dist:sass']);
